@@ -1,0 +1,40 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[latin1]{inputenc}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+
+
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}[section]
+
+\begin{document}
+\tableofcontents
+\section{Der Satz vom kleinen Moritz}
+\begin{thm}
+Sei $K$ ein kommutativer Körper mit $1+1 = 0$. Dann gilt 
+\begin{displaymath}
+(x + y)^2 = x^2 + y^2
+\end{displaymath}
+für alle $x,y \in K$.
+\end{thm}
+\begin{proof}
+Es gilt: 
+\begin{align}
+(x+y)^2 &= (x+y)(x+y)
+&= x^2 + xy + xy + y^2\\
+&= x^2 + (1+1)xy + y^2\\
+&= x^2 + y^2
+\end{align}
+\end{proof}
+
+\section{Ein kleiner Beweis der Riemann-Vermutung}
+ 
+In Vorbereitung \ldots
+
+\end{document}
