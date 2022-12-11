@@ -1,0 +1,67 @@
+\author{Szymon Chlopek - XXXXXXXX \\ Christian Otto - XXXXXXXX}
+\title{Derivate Case}
+\date{\today}
+
+\documentclass[12pt,a4paper,twoside]{article}
+\usepackage{ngerman}
+\usepackage [latin1]{inputenc}
+\usepackage{graphicx}
+\nonfrenchspacing
+
+\begin{document}
+\maketitle
+
+\textbf{Aufgabenteil (i)}
+\begin{itemize}
+	\item \textbf{Schätzung des Erwartungswertes sowie der Varianz} - siehe dazu die zugehörige Excel-Datei (derivatecase szymon chlopek.xlsx) bzw. die unten hinzugefügte Tabelle aller errechneten Werte.
+	\item \textbf{Bestimmung der Up und Down-Spürnge} unter der Annahme $u=1/d$ - hierfür wendet man die Formel nach Cox/Rubinstein (Skript S.114), die da besagt: $u:= \exp(\sigma \sqrt(\frac{T}{n}))$, wobei $\sigma = \sqrt(Var)$ - die Standardabweichung, $T$ - die Dauer, $n$ - Anzahl der Sprünge ist. Das zugrunde liegende Modell liefert: $\sigma = 0.1015, T=5, n=5.$ Setzt man dies in obige Gleichung, so erhält  man für $u=1.106779474$ sowie entsprechend $d=\frac{1}{u}=0.9035223579.$
+\end{itemize}
+\textbf{Aufgabenteil (ii)} \\ 
+In diesem Teil rechnet man die Up-Wahrscheinlichkeiten unter dem physischen Maß mit der Formel $p(n)=\frac{1}{2} + \frac{1}{2}\frac{\mu}{\sigma}\sqrt{\frac{T}{n}}$. Weiter setzt man die oben gennate Werte sowie $\mu= 0.0019$ ein und bekommt $p=0.5095$. Weiter wird die Formel $q=\frac{\exp(iT)-d}{u-d}$ beznutzt um die Up-Wahrscheinlichkeiten unter dem risikoneutralen Maß auszurechnen. Hierbei ergibt sich $q=0.7269.$\\
+\\
+\textbf{Aufgabenteil (iii) sowie (iv)} \\
+Programmierung eines volständigen Baumes über 5 Peridoden für das risikoneutrale WMaß und Strike in Höhe von $30,35,40$ - siehe hierfür die dazugehörige Excel-Datei. \\
+\\
+\textbf{Aufgabenteil (v)}
+\begin{itemize}
+	\item Bewertung eines amerikanischen Call (long) - Strike $K = 35$, Laufzeit 5 Monate in den Knoten \textsl{d-u-u (in t=3), u-u-d-d (in t=4), u-u-u-u (in t=4)} - siehe Excel
+	\item Wie der Excel-Datei zu entnehmen ist, ist es in keinem der angegebenen Knoten sinnvoll das Derivat auszuüben. Immer ist es sinnvoll bis zu Fälligkeitsdatum zu warten.  \\
+	\item \textbf{Ausübung sobald der Payoff positiv - Bewertung}: Bei dieser Strategie übt man sofort aus, sobald ein positiver Payoff erreicht wird. Da die Vorteilhaftigkeit nicht betrachtet wird, sinkt das erzielbare Ergebnis im Vergleich zu amerikanischem Call. Nach Möglichkeit wird bereits in $t=0$ ausgeübt.
+\end{itemize}
+\textbf{Aufgabenteil vi} - \textbf{Wert eines amer. Calls bei einer Dividende}
+\begin{itemize}
+	\item Dividende nach der 4 Periode in Höhe von 5 Euro - Der Wert des amerikanischen Calls beträgt 7.9891 Euro (Rechnung ist der Excel-Datei zu entnehmen.
+	\item Dividende nach der 4 Periode in Höhe von $0.5\%$ - Der Wert des amerikanischen Calls beträgt 11.5111 Euro (Rechnung ist der Excel-Datei zu entnehmen.
+\end{itemize}
+
+
+\par\medskip
+\begin{center}
+
+\begin{tabular}{|l|l|l|l|l|l|} 
+
+\hline
+\textbf{EW} & \textbf{Var} &  \textbf{Up-Wkeit} & \textbf{Down-Wkeit} & \textbf{Phy. Maß p} &\textbf{Ris.Neu. Maß q} \\
+\hline
+\hline
+0,0019 & 0.0103 & 1.1068 & 0.9035 & 0.5095 & 0.7269 \\
+\hline
+\end{tabular}
+\end{center}
+
+
+\par\medskip
+\begin{center}
+
+\begin{tabular}{|l|l|l|l|l|l|l|} 
+
+\hline
+\textbf{$C^{e}$ Strike 30} & \textbf{Strike 35} &  \textbf{Strike 40} & \textbf{$C^{a}$} & Payoff & \textbf{Div = 5} &\textbf{Div = 0.05} \\
+\hline
+\hline
+15,3174 & \textbf{11,5147} & 8,1244 & \textbf{11,5147} & 3,6500 & 10,5381 & 11,3384 \\
+\hline
+\end{tabular}
+\end{center}
+
+\end{document}

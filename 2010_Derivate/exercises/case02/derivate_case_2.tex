@@ -1,0 +1,70 @@
+\author{Szymon Chlopek - XXXXXXXX \\ Christian Otto - XXXXXXXX}
+\title{Derivate Case}
+\date{\today}
+
+\documentclass[12pt,a4paper,twoside]{article}
+\usepackage{ngerman}
+\usepackage [latin1]{inputenc}
+\usepackage{graphicx}
+
+\nonfrenchspacing
+
+\begin{document}
+\maketitle
+
+\textbf{Aufgabenteil (i)}\\
+\begin{tabular}{|l|r|r|r|r|r|}
+  \hline
+  \textbf{Rückzahlungsdatum}&\textbf{1}&\textbf{2}&\textbf{3}&\textbf{4}&\textbf{5}\\
+  \hline
+  \textbf{12.08.2011}&0&0&0&107,5&0\\
+  \hline
+  \textbf{13.08.2012}&0&0&115&115&0\\
+  \hline
+  \textbf{12.08.2013}&0&122,5&122,5&122,5&0\\
+  \hline
+  \textbf{12.08.2014}&0&130&130&130&0\\
+  \hline
+  \textbf{12.08.2015}&0&137,5&137,5&137,5&137,5\\
+  \hline
+\end{tabular} \\
+Die genauen Berechnungen sind dem Excel-Sheet zu entnehmen.\\ \\
+\textbf{Aufgabenteil (ii)} \\ 
+\begin{tabular}{|l|r|}
+  \hline
+  &\textbf{Wert}\\
+  \hline
+  \textbf{Risikoloser Zins} $r$&2,40 Prozent\\
+  \hline
+  \textbf{Volatilität}&32,54 Prozent\\
+  \hline
+\end{tabular} \\ \\
+Hierbei wurden der Seite http://www.deutsche-finanzagentur.de am 19.01.2011 der Wert 2,40 Prozent entnommen. Dieser entspricht der Rendite einer kurzfristigen Bundesanleihe. Für die Volatilität wurde die Funktion STABW benutzt, um den Schätzer der Standardabweichung zu finden. \\
+Die genauen Berechnungen sind dem Excel-Sheet zu entnehmen.\\ \\
+\textbf{Aufgabenteil (iii)} \\ 
+\begin{tabular}{|l|r|r|}
+  \hline
+  $X_t$&\textbf{Kurs}&\textbf{Rückzahlung}\\
+  \hline
+  \textbf{0,3}&2231,4219&0\\
+  \hline
+  \textbf{0,1}&1744,1533&0\\
+  \hline
+  \textbf{0,6}&2874,0171&122,5\\
+  \hline
+  \textbf{0,1}&1744,1533&130\\
+  \hline
+  \textbf{0,8}&3480,3386&137,5\\
+  \hline
+\end{tabular} \\
+Die genauen Berechnungen sind dem Excel-Sheet zu entnehmen.\\ \\
+\textbf{Aufgabenteil (iv)}\\
+\textbf{Zertifkatswert}: 108,5736\\
+Die genauen Berechnungen und Simulationen sind dem Excel-Sheet zu entnehmen.\\ \\
+Für die Monte-Carlo-Simulation sprechen einige Gründe.\\
+So ermöglichen uns heute Computer durch Simulationen komplexe Sachverhalte auch in mehreren Szenarien schnell und kosteneffizient zu bestimmen. Zudem basieren die meisten Modelle auf mathematischen Formeln und Modellen, deren charakteristische Eigenschaften nur teilweise oder gar nicht in geschlossenen Formeln gefasst werden kann. Zudem führt der Komplexitätsgrad vieler Modelle dazu, dass diese nur noch schwer ohne Zuhilfenahme von Computersimulationen beschreibbar sind.\\
+Im Gegensatz dazu, gibt es auch einige nicht von der Hand zu weisende Nachteile.\\
+So führt eine Verarbeitung durch einen Computer automatisch zu Ungenauigkeiten, die auf der beschränkten Darstellungskapazität der Datentypen beruhen und sich durch Weiterverwendung der Berechnungsergebnisse fortpflanzen und auch vergrößern kann. Analog dazu führen auch Modellfehler/-ungenauigkeiten zu dem selben Problem, dass Abweichungen zur Realität entstehen, die sich fortpflanzen, je länger die Betrachtungsperiode währt. Zudem spielen hier die Probleme herein, dass in der realen Welt nicht zwingend Bewertungen nur nach dem unterstellten System angestellt werden. Zudem sind die Ergebnisse von der Verteilung der Zufallszahlen abhängig. Jedoch sollte bei genügend großen Stichproben der statistische Fehler durch unglückliche Ziehungen von Zufallszahlen gegen 0 laufen und sich stabilisieren. Zudem ist die Monte Carlo-Methode relativ aufwändig, auch wenn die Rechenzeit auf aktuellen Computern nur noch ein geringes Problem darstellt.\\ \\
+Abschließend lässt sich sagen, dass die Monte-Carlo-Simulation zwar unter einigen Nachteilen leidet, die die Prognosequalität schmälern, jedoch die Vorteile überwiegen, da einige der Modelle nicht oder nur schwer in geschlossene Formeln fassbar sind, und ansonsten eine Bewertung in diesen Modellen schwer fallen dürfte.
+
+\end{document}
