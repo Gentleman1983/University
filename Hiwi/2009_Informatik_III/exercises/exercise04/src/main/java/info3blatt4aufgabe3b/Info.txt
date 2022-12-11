@@ -1,0 +1,2 @@
+Achtung!
+Die genaue Berechnung iteriert über alle Längenpartitionen. Das heißt, sie überprüft 10^2*11^2*26^2*27^2=5,963*10^9 Fälle!!! Hierfür solltet ihr durchaus eine Rechenzeit im hohen Stundenbereich bis vllt. auch im Tagebereich ansetzen! Dagegen sind die kleinen Funktionen, die nur entweder die Maxima oder die Minima anpassen mit 10*11*26*27=77220 Fällen relativ schnell!Jedoch werden hier die Fälle ignoriert, die sowohl obere als auch untere Grenze anpassen, so dass gegebenenfalls noch ein Optimum verborgen bleiben kann.
