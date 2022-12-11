@@ -1,0 +1,117 @@
+%% LyX 2.0.0 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[a4paper,ngerman]{scrartcl}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+\pdfpageheight\paperheight
+\pdfpagewidth\paperwidth
+
+
+\makeatother
+
+\usepackage{babel}
+\begin{document}
+
+\section{VaR aus historischer Simulation}
+
+Es gilt:
+
+$VaR_{5d}^{99\%}=\$(-160.087,78);\quad VaR_{10d}^{99\%}=\$(-226.398,30)$
+
+Somit ist der Verlust in 5 Tagen zu 99\% nicht höher als ca. $\$160.087,78$
+und in 10 Tagen als ca. $\$226.398,30$.
+
+
+\section{Modellerweiterung}
+
+Die gängigste Alternative zur historischen Simulation ist der Model-Building-Ansatz,
+auch bekannt als Varianz-Covarianz- oder Delta-Normal-Ansatz. Dieser
+basiert auf dem VaR-Modell von J.P. Morgan und beschreibt die Risikofaktoren
+durch eine Covarianzmatix unter der Annahme einer multivariaten Normalverteilung
+der Änderungen der Risikofaktoren. Aufgrund der Beschränkung auf Abbildung
+linearer Zusammenhänge zwischen Risikofaktoren und Marktpreisen ist
+es schwierig in diesem Modell nicht-lineare Zusammenhänge wie Optionen
+zu bewerten. Eine Lösung dieses Problems wird durch die Cornish-Fisher-Approximation
+angeboten, auf die wir hier nicht gesondert eingehen.
+
+Vorteile dieses Ansatzes liegen in der einfachen Berechenbarkeit dieses
+Ansatzes. Hierbei wird ein erwarteter Return aller Faktoren von 0,
+sowie - wie oben schon gesagt - für alle Faktoren eine multivariate
+Normalverteilung angenommen, wobei die Returns eines jeden beliebigen
+Portfolios normalverteilt sind. Anschließend werden aus den historischen
+Daten die Returns aus den Wertänderungen berechnet und die Varianz-Covarianz-Matrix
+für alle Faktoren aufgestellt. Anschließend wird die Portfoliovarianz
+bestimmt und aus dieser - dank der Annahme der Normalverteilung -
+der VaR bestimmt.
+
+
+\section{VaR aus Model-Building}
+
+Es gilt:
+
+$VaR_{5d}^{99\%}=\$(-158.079,08);\quad VaR_{10d}^{99\%}=\$(-223.557,58)$
+
+Somit ist der Verlust in 5 Tagen zu 99\% nicht höher als ca. $\$158.079,08$
+und in 10 Tagen als ca. $\$223.557,58$.
+
+Da wir keine Positionen in Optionen haben, bietet sich der Model-Building-Ansatz
+zur Bewertung an.
+
+
+\section{Options im Portfolio}
+
+Hier stellt sich das Problem, der fehlenden Linearität der Optionen
+zu ihrem Underlying. Dies kann zwar über lineare Approximation, die
+Nutzung von delta und die Abbildung auf ein Portfolio aus delta-Underlying
+und risikofreiem Instrument ein wenig abgemildert werden, aber alles
+in allem sollte das Portfolio ebenfalls den selben Preis wie die Option
+habn.
+
+
+\section{DUR{*}, Conv, relative price change}
+
+$DUR^{*}=(-\frac{\frac{\Delta P}{P}}{\Delta r})=(-\frac{\frac{1.160,1253765-1.159,0974311}{1.159,6742320}}{0,0002})=(-4,4320438)$
+
+$DV01(r)=DUR^{*}*P*0,0001=(-0,5139727)$
+
+$DV01(r+1bp)=DUR**P(r+1bp)*0,001=(-0,5141726)$
+
+$Conv=\frac{1.000.000}{P}*(DV01(r)-DV01(r-1bp))=0,1723760$
+
+$P_{\Delta}=DV01(r)*(-200)=\$102,79454$
+
+Bei einem Zinsanstieg um $200$ Basispunkte, steigt der Wert unserer
+Anlage um $\$102,79454$.
+
+
+\section{Duration of the fund}
+
+$DUR_{E}=\frac{\$500.000}{\$4.000.000}*0+\frac{\$3.500.000}{\$4.000.000}*6-\frac{\$1.500.000}{\$3.000.000}*5-\frac{\$1.500.000}{\$3.000.000}*10=(-2,25)$yrs.
+
+
+\section{Immunization by Interest Rate Swap}
+
+Unsere aktuelle Equity-Laufzeit beträgt $DUR_{E}=-2,25$. Da $DUR_{E}<0$
+gilt, müssen wir um die Anlagen zu immunisieren, die Laufzeit erhöhen.
+Hierzu steht uns eine Anlage mit $5$ Jahren und eine mit $0,5$ Jahren
+Laufzeit zur Verfügung. Um die Laufzeit zu erhöhen, wählen wir die
+Rolle des Floating-Rate-Payers, also wir möchten gerne die Fixed Rate
+erhalten.
+
+Es gilt:
+
+$DUR_{Swap}=(-5)+0,5=(-4,5)$
+
+$\Delta DUR_{E}=\Delta DUR_{Swap}*\frac{x}{P_{E}}$
+
+Umgestellt ergibt sich:
+
+$x=\frac{\Delta DUR_{E}*P_{E}}{\Delta DUR_{Swap}}=\frac{(-2,25)*\$1.000.000}{(-4,5)}=\$500.000,00$
+
+Wir sollten also in den Swap $\$500.000,00$ Investieren um unser
+Interest Rate Risk zu minimieren.
+\end{document}

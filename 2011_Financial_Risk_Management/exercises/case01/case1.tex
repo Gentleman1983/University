@@ -1,0 +1,161 @@
+%% LyX 2.0.0 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[english]{article}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage{units}
+\usepackage{textcomp}
+\usepackage{amstext}
+\usepackage{amssymb}
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+%% Because html converters don't know tabularnewline
+\providecommand{\tabularnewline}{\\}
+
+\makeatother
+
+\usepackage{babel}
+\begin{document}
+
+\section*{Aufgabe 1}
+
+
+\subsection*{Teilaufgabe 1}
+
+Bestimme die Cost of Capital ($CoC_{\$}$) per CAPM:
+
+$CoC_{\$}=E[\widetilde{R_{WAG}}]=R_{f}+\beta_{WAG}(E[\widetilde{R_{M}}]-R_{f})$
+
+$=3\%+0.85*7.5\%=9,375\%$
+
+Da die 7,5\% bereits die Risikoprämie des Marktes ist, ist die erwartete
+Marktrendite 10,5\%, so dass wir hier diese Rechnung vereinfachen
+konnten.
+
+Somit liegen die erwarteten Eigenkapitalkosten bei $9,375\%$.
+
+
+\subsection*{Teilaufgabe 2}
+
+Da wir nun die $CoC_{\$}$besitzen, jedoch eine Investition in einer
+Fremdwährung betrachten, müssen wir nun die $CoC_{\text{¤}}$bestimmen:
+
+$(1+CoC_{\text{¤}})=(1+CoC_{\$})*\frac{(1+i_{\text{¤}})}{(1+i_{\$})}$
+
+$\Leftrightarrow CoC_{\text{¤}}=(1+CoC_{\$})*\frac{(1+i_{\text{¤}})}{(1+i_{\$})}-1$
+
+$\Leftrightarrow CoC_{\text{¤}}=(1+0.09375)*\frac{(1+0.02)}{(1+0.03)}-1$
+
+$\Leftrightarrow CoC_{\text{¤}}\thickapprox8,3131\%$
+
+Nun können wir den Projekt-NPV in Fremdwährung ($NPV_{\text{¤}}$)
+bestimmen:
+
+$NPV_{\text{¤}}=\Sigma_{i=0}^{6}\frac{C_{i}}{(1+CoC_{\text{¤}})^{i}}$
+
+$=(-90)+\frac{10}{1.083131}+\frac{10}{1.083131{}^{2}}+\frac{15}{1.083131{}^{3}}+\frac{35}{1.083131{}^{4}}+\frac{45}{1.083131{}^{5}}+\frac{45}{1.083131{}^{6}}$
+
+$\thickapprox23,04622$
+
+Da wir nun den Net Present Value des Projekts in Euro haben, können
+wir bereits hier sehen, dass das Projekt in jedem Falle vorteilhaft
+ist, da der NPV größer 0 ist. Jedoch interessiert und statt dem NPV
+in Euros der NPV in US-Dollars:
+
+$NPV_{\$}=NPV_{\text{¤}}*s_{\nicefrac{\$}{\text{¤}}}^{0}=23,04622\text{¤}*1.40\frac{\$}{\text{¤}}\thickapprox32,2647\$$
+
+(Die Berechnungen wurden vollständig mit ungerundeten Werten durchgeführt.)
+
+
+\subsection*{Teilaufgabe 3}
+
+Berechnen wir zuerst die Forward-Rates für die jeweiligen Perioden,
+um uns gegen das Exchange Rate Risk per Hedging absichern zu können:
+
+$f_{\nicefrac{\$}{\text{¤}}}^{t}=s_{\nicefrac{\$}{\text{¤}}}^{0}\frac{(1+i_{\$})^{t}}{(1+i_{\text{¤}})^{t}}$
+
+Dies ergibt folgende Tabelle:
+
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline 
+Jahr ($t$) & $1$ & $2$ & $3$ & $4$ & $5$ & $6$\tabularnewline
+\hline 
+\hline 
+$f_{\nicefrac{\$}{\text{¤}}}^{t}$ & $1.41372$ & $1.42759$ & $1.44158$ & $1.45571$ & $1.46999$ & $1.4844$\tabularnewline
+\hline 
+\end{tabular}
+
+Für die jeweiligen CashFlows ergibt sich nun diese Tabelle:
+
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline 
+Jahr ($t$) & $1$ & $2$ & $3$ & $4$ & $5$ & $6$\tabularnewline
+\hline 
+\hline 
+$CF_{\$}^{t}$ & $14.137$ & $14.276$ & $21.624$ & $50.950$ & $66.149$ & $66.798$\tabularnewline
+\hline 
+\end{tabular}
+
+Für die diskontierten CashFlows ergibt sich, diesmal jedoch mit $CoC_{\$}$:
+
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline 
+Jahr ($t$) & $1$ & $2$ & $3$ & $4$ & $5$ & $6$\tabularnewline
+\hline 
+\hline 
+$NPV_{\$}(CF_{\$}^{t})$ & $12.925$ & $11.933$ & $16.526$ & $35.602$ & $42.261$ & $39.017$\tabularnewline
+\hline 
+\end{tabular}
+
+Für die Anfangsinvestition gilt:
+
+$NPV_{\$}(I_{0})=s_{\nicefrac{\$}{\text{¤}}}^{0}*I_{0}=(-126)\$$
+
+Somit gilt:
+
+$NPV_{\$}=NPV_{\$}(I_{0})+\Sigma_{i=1}^{6}NPV_{\$}(CF_{\$}^{i})\thickapprox32,2647\$$
+
+Wir erkennen somit, dass bei beiden Berechnungen der gleiche NPV heraus
+kommt, obwohl wir offensichtlich bei der 2. Teilaufgabe das Exchange
+Rate Risk vernachlässigen. Dies ist jedoch aufgrund der Covered Interest
+Rate Parity per Definition gegeben. 
+
+(Die Berechnungen wurden vollständig mit ungerundeten Werten durchgeführt.)
+
+
+\section*{Aufgabe 2}
+
+
+\subsection*{Teilaufgabe A}
+
+Wie in der Rechentabelle ersichtlich ist, führt der Absatzrückgang
+aufgrund des Beharrens auf einen konstanten Europreis zu einem vorteilhafteren
+Ergebnis - statt ca. 13,02 Mio ¤ sinkt der Gewinn in diesem Fall auf
+nur ca. 14,18 Mio ¤. Somit ist bei rein monitärer Betrachtung für
+den 1-Jahres-Zeitraum Lösung 2 die sinnvollere.
+
+Dies liegt darin begründet, dass durch den höheren Ertrag pro Fahrzeug
+der Nachteil des Absatzes ausgeglichen werden kann.
+
+
+\subsection*{Teilaufgabe B}
+
+Betrachten wir nun den Zeitraum von 8 Jahren, so ergibt sich ein widersprechendes
+Bild. Zum einen durch den geringeren Wachstum und die geringere Ausgangsmenge,
+die am Markt abgesetzt werden kann, führt die zweite Strategie (Beharren
+auf Euro-Preis) zu einem Nachteiligen ergebnis, auch wenn die sehr
+hohen Umsätze von Strategie 1 (Beharren auf CNY-Preis) sehr stark
+im Present Value unter dem Diskontierungsfaktor leiden.
+
+Betrachtet man beide Present-Value-Verläufe genau, so erkennt man,
+dass nur bis nach dem dritten Jahr die zweite Strategie kumuliert
+besser ist als die erste Strategie. Ab Jahr 4 wirkt sich der deutlich
+höhere Absatz und Marktwachstum derart aus, dass die jährlichen kumulierten
+Present Values die von Strategie 2 dominieren.
+
+Durch den besseren Net Present Value unserer ersten Strategie empfehlen
+wir dem deutschen Automobilproduzenten den geringeren Euro-Gegenwert/konstanten
+CNY-Wert zu wählen.
+\end{document}
