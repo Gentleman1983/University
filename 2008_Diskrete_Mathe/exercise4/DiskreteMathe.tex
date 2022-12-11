@@ -1,0 +1,212 @@
+\documentclass{article}
+
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[all]{xy}
+\usepackage{xcolor}
+\usepackage{amsfonts,amsthm,amssymb,amsmath,nicefrac,empheq}
+\usepackage{mathcomp,mathtools}
+\usepackage{pxfonts}
+
+\usepackage{graphicx}
+\DeclareGraphicsExtensions{.eps,.pdf}
+\DeclareGraphicsRule{*}{mps}{*}{}
+
+\newcommand*{\7}{\textbackslash}
+\newcommand*{\abs}[1]{\lvert#1\rvert}
+\newcommand*{\Basis}{\mathcal}
+\newcommand*{\C}{{\mathbb{C}}}
+\newcommand*{\conj}[1]{\overline{#1}}
+\renewcommand{\epsilon}{\varepsilon}
+\newcommand*{\Euler}{{\text{e}}}
+\newcommand*{\Gl}{{\text{Gl}}}
+\newcommand*{\ID}{{\text{id}}}
+\newcommand*{\ima}{{\text{i}}}
+\newcommand{\imp}{\Longrightarrow}
+\newcommand*{\Mat}[2]{\mathbb{M}_{#1\times #2}}
+\newcommand*{\MatBas}[2]{\mathrm{M}_{\Basis{#1}}^{\Basis{#2}}}
+\newcommand*{\N}{{\mathbb{N}}}
+\newcommand*{\norm}[1]{\lVert#1\rVert}
+\newcommand*{\OO}{{\text{O}}}
+\newcommand*{\powerset}{{\mathcal{P}}}
+\newcommand*{\Q}{{\mathbb{Q}}}
+\newcommand*{\R}{{\mathbb{R}}}
+\newcommand*{\SO}{{\text{SO}}}
+\newcommand*{\SU}{{\text{SU}}}
+\newcommand*{\symdif}{\mathbin\triangle}
+\newcommand*{\trans}[1]{\prescript{t}{}{#1}}
+\newcommand{\ueber}{\genfrac{}{}{0pt}{}}
+\newcommand*{\UU}{{\text{U}}}
+\newcommand*{\Z}{{\mathbb{Z}}}
+
+\DeclareMathOperator{\Abb}{Abb}
+\DeclareMathOperator{\arccot}{arccot}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Bild}{Bild}
+\DeclareMathOperator{\Endo}{Endo}
+\DeclareMathOperator{\Grad}{Grad}
+\DeclareMathOperator{\Graph}{Graph}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\IM}{Im}
+\DeclareMathOperator{\Kern}{Kern}
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\Rang}{Rang}
+\DeclareMathOperator{\RE}{Re}
+\DeclareMathOperator{\Rest}{Rest}
+\DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\Span}{Span}
+\DeclareMathOperator{\Spur}{Spur}
+\DeclareMathOperator{\supp}{\text{Träger}}
+
+\theoremstyle{remark}
+	\newtheorem*{Behauptung}{Behauptung}
+\theoremstyle{definition} 
+	\newtheorem*{Begruendung}{Begr\"undung}
+	\newtheorem*{Beispiel}{Beispiel}
+	\newtheorem*{Beispiele}{Beispiele} 
+	\newtheorem*{Bemerkung}{Bemerkung}
+	\newtheorem*{Beweis}{Beweis}
+	\newtheorem*{Definition}{Definition}
+	\newtheorem*{Fazit}{Fazit}
+	\newtheorem*{Folgerung}{Folgerung}
+	\newtheorem*{Lemma}{Lemma}
+	\newtheorem*{Voraussetzung}{Voraussetzung}
+
+\begin{document}
+	Hi, Daniel.\\
+	Da du ja keine gedruckten L\"osungen annehmen darfst, haben wir uns \"uberlegt, wie wir dir eine \LaTeX{}-L\"osung geschickt zukommen lassen k\"onnen. Naja, das gedruckte abschreiben, w\"are recht langweilig. Denn, dann k\"onnten wir uns das Setzen mit \LaTeX auch sparen. Daher musst du wohl oder \"ubel mit unserem handschriftlichen \LaTeX{}-Code zurecht kommen. Ich hoffe, du beherrschst die \LaTeX{}-Syntax ausreichend gut, um das, was wir dir hier gesetzt haben, zu verstehen. Wir finden ja, dass \LaTeX eine sehr tolle Sache ist - speziell f\"ur Pr\"asentationen und Abschlussarbeiten.
+
+	Vieleicht noch zu erw\"ahnen, dass wir dieses Dokument mit \LaTeXe in\-klu\-si\-ve des kompletten \LaTeX{}-Paketsatzes.
+
+	\section*{Aufgabe 1}
+
+	\subsection*{Aufgabe 1.1}
+
+	Aufgabe ist es, die Multiplikationstafel f\"ur $\nicefrac{\Z}{10*\Z}$ aufzustellen:
+
+	\begin{tabular}{lcccccccccc}
+		\textbf{[*]}&\textbf{[0]}&\textbf{[1]}&\textbf{[2]}&\textbf{[3]}&\textbf{[4]}&\textbf{[5]}&\textbf{[6]}&\textbf{[7]}&\textbf{[8]}&\textbf{[9]}\\
+		\textbf{[0]}&[0]&[0]&[0]&[0]&[0]&[0]&[0]&[0]&[0]&[0]\\
+		\textbf{[1]}&[0]&[1]&[2]&[3]&[4]&[5]&[6]&[7]&[8]&[9]\\
+		\textbf{[2]}&[0]&[2]&[4]&[6]&[8]&[0]&[2]&[4]&[6]&[8]\\
+		\textbf{[3]}&[0]&[3]&[6]&[9]&[2]&[5]&[8]&[1]&[4]&[7]\\
+		\textbf{[4]}&[0]&[4]&[8]&[2]&[6]&[0]&[4]&[8]&[2]&[6]\\
+		\textbf{[5]}&[0]&[5]&[0]&[5]&[0]&[5]&[0]&[5]&[0]&[5]\\
+		\textbf{[6]}&[0]&[6]&[2]&[8]&[4]&[0]&[6]&[2]&[8]&[4]\\
+		\textbf{[7]}&[0]&[7]&[4]&[1]&[8]&[5]&[2]&[9]&[6]&[3]\\
+		\textbf{[8]}&[0]&[8]&[6]&[4]&[2]&[0]&[8]&[6]&[4]&[2]\\
+		\textbf{[9]}&[0]&[9]&[8]&[7]&[6]&[5]&[4]&[3]&[2]&[1]\\
+	\end{tabular}
+
+	\subsection*{Aufgabe 1.2}
+
+	\begin{Voraussetzung}
+		Wir betrachten den Zahlenraum $\nicefrac{\Z}{26*\Z}$.
+	\end{Voraussetzung}
+
+	\begin{Behauptung}
+		Nur die Kongruenzklassen [1], [3], [5], [7], [9], [11], [15], [17], [19], [21], [23], [25] haben multiplikative Inverse.
+	\end{Behauptung}
+
+	\begin{Beweis}
+		Dieser Beweis ist in jedem Fall eine unsch\"one Geschichte, wenn man den Beweis formal f\"uehren wolle oder alternativ die Multiplikationstabelle f\"ur $\nicefrac{\Z}{26*\Z}$ aufstellen m\"ochte. Beim Beweis m\"usste man f\"u r jede der oben angegebenen Kongruenzklassen $k$ zeigen, dass sie $ggT(k, 26)=1$ aufweisen, also teilerfremd sind (da wir in der Vorlesung gezeigt haben, dass unter der Teilerfremdheit in den jeweiligen Spalten bzw. Zeilen jede Zahl von $0$ bis $n=26$ genau einmal vorkommt. Ebenso m\"usste ich zeigen, dass f\"ur alle anderen Elemente nicht zuf\"allig die $1$ als Multiplikationsergebnis vorkommt.\\
+		Die Alternative besteht darin eine Multiplikationstabelle mit $26^2=676$ Feldern aufzustellen. Ich glaube, dass w\"are auch nicht wirklich Sinn der Sache... Daher hoffe ich, dass du akzeptierst, wenn ich die $ggT$-Folgerungen ein wenig abk\"urze.\\
+		Beginnen wir mit einer Primfaktorzerlegung der Zahl $n=26=2^1*13^1$. Somit sind $2$ und $13$ die einzigen Primfaktoren. Du wirst mir sicherlich glauben, dass die Zahlen $3$, $5$, $7$, $11$, $17$, $19$ und $23$ Primzahlen sind und damit da jede von ihnen ungleich der Primfaktoren von $n$ sind, auch teilerfremd mit $n$. Per Definition gilt, dass $ggT(m,1)=1\forall0<m\in\N$. Nun bleibt es an uns zu zeigen, dass $9$, $15$, $21$ und $25$ eine Primfaktorzerlegung hat, die keinen der Primfaktoren von $n$ enthalten. Es gilt folgende Primfaktorzerlegung:
+
+		\begin{tabular}{lc}
+ 			\textbf{Zahl:}&\textbf{Primfaktorzerlegung}\\
+			$9$&$3^2$\\
+			$15$&$3^1*5^1$\\
+			$21$&$3^1*7^1$\\
+			$25$&$5^2$
+		\end{tabular}
+
+		Da wir in der Vorlesung gezeigt haben, dass die Primfaktorzerlegung bis auf Permutation eindeutig ist, gilt daher auch für $9$, $15$, $21$ und $25$ die Teilerfremdheit. Somit haben wir schonmal f\"ur alle diese Kongruenzklassen gezeigt, dass diese auf jeden Fall ein multiplikatives Inverses besitzen.
+
+		Bei $0$ ist die Sache eindeutig, da die Kongruenzklasse [0] im $\nicefrac{\Z}{i*\Z}$ nie ein multiplikatives Inverses besitzt. F\"uhren wir nun die Primfaktorzerlegung der anderen Zahlen durch:
+		
+		\begin{tabular}{lc}
+ 			\textbf{Zahl:}&\textbf{Primfaktorzerlegung}\\
+			$2$&$2^1$\\
+			$4$&$2^2$\\
+			$6$&$2^1*3^1$\\
+			$8$&$2^3$\\
+			$10$&$2^1*5^1$\\
+			$12$&$2^2*3^1$\\
+			$13$&$13^1$\\
+			$14$&$2^1*7^1$\\
+			$16$&$2^4$\\
+			$18$&$2^1*3^2$\\
+			$20$&$2^2*5^1$\\
+			$22$&$2^1*11^1$\\
+			$24$&$2^3*3^1$
+		\end{tabular}
+		
+		Hier f\"allt auf, dass die gesammten geraden Zahlen den Primfaktor $2$ und die $13$ den Primfaktor $13$ enthalten. Wir sehen, es sind beides Teiler der Basis $n=26$. Weiterhin sehen wir, dass die Basis einen geraden Wert, um genau zu sein $26$, besitzt. Offensichtlich m\"usste f\"ur die Erzeugung eines Multiplikativen Inversen gelten:
+		\[a (mod 26) = 1\]
+		Da jedoch $26$ eine gerade Zahl ist, ergibt sich, dass durch die Modulo-Operation keine gerade Zahl in einen ungeraden Rest transformiert werden kann, da
+		\[a = 26*k + R = 2*(13*k) + R | k\in\N\]
+		Folglich k\"onnen hier die geraden Zahlen keine multiplikativen Inversen besitzen. Bleibt nur noch zu zeigen, dass selbiges auch f\"ur $13$ gilt. Es gilt $2*13=26$, also gilt bei jedem geraden Faktor wird die Kongruenzklasse [0] auftauchen. Jedoch bleibt f\"ur die ungeraden Faktoren nur noch die Kongruenzklasse [13], da in jedem vorherigen Schritt die Kongruenzklasse [0] war.\\
+		Somit haben wir gezeigt, dass nur die in der Behauptung genannten Kongruenzklassen im $\nicefrac{\Z}{26*\Z}$ multiplikative Inverse besitzen.
+		\begin{flushright}
+    			q.e.d.
+		\end{flushright}
+	\end{Beweis}
+
+
+	\section*{Aufgabe 2}
+
+	\section*{Aufgabe 3}
+
+	\section*{Aufgabe 4}
+	
+	\begin{Voraussetzung}
+		Sei $p$ eine Primzahl und sei \[m=\prod_{i=1}^n(a_i)\] ein Produkt aus $n$ Faktoren.
+	\end{Voraussetzung}
+
+	\begin{Behauptung}
+		\[p|m\Leftrightarrow\exists 1\leq{k}\leq{n}:p|a_k\]
+	\end{Behauptung}
+
+	\begin{Beweis}
+		\underline{Induktionsanfang:}\\
+		Sei $n=1$. Es gilt:
+		\[p|m=a_1\Leftrightarrow\exists k=1: p|a_k\]
+		Offensichtlich ist dies erf\"ullt.
+
+		\underline{Induktionsvorraussetzung:}\\
+		$\forall n'\leq{n}$ gilt:
+		\[p|m\Leftrightarrow\exists 1\leq{k}\leq{n'}:p|a_k\]
+
+		\underline{Induktionsschritt:}\\
+		Wir m\"ussen zeigen, dass die Aussage von $n'\leq{n}$ auch auf $n'\leq(n+1)$ ausgeweitet werden kann.
+
+		Beginnen wir mit der Hinrichung. Schreiben wir im Fall von $(n+1)$ die Zahl $m$ einmal ausf\"uhrlich und nennen sie der Einfachheit $m'$, so erhalten wir folgendes:
+		\[m'=\prod_{i=1}^{n+1}(a_i)=a_1*a_2*\dots{}*a_{n-1}*a_n*a_{n+1}=\prod_{i=1}^{n}(a_i)*a_{n+1}=m*a_{n+1}\]
+		Nun k\"onnen wir zwei F\"alle unterscheiden:
+		\begin{enumerate}
+ 			\item[Fall 1:] Im trivialen Fall galt bereits $p|m$, also galt bereits $\exists 1\leq{k}\leq{n}:p|a_k$. Nehmen wir o.B.d.A. an, dass gilt $p|a1$. Somit gilt ebenfalls $\exists 1\leq{k}\leq{n}<(n+1):p|a_k$.
+			\item[Fall 2:] Wenn gilt $p\nmid{}m$ hei\ss{}t dies aufgrund der Voraussetzung $\nexists 1\leq{k}\leq{n}:p|a_k$. Da gilt $ggT(m,p)=1$ f\"uhrt aus der Aussage $p|m'=m*a{n+1}$, da $p$ und $m$ offensichtlich teilerfremd sind, automatisch $p|a_{n+1}$. Trivialerweise gilt damit 
+			\[p|m'\Rightarrow\exists 1\leq{k}\leq{n+1}:p|a_k\]
+		\end{enumerate}
+		Hiermit w\"are die Hinrichtung bewiesen.\\
+		Nun bleibt noch die R\"uckrichtung zu zeigen. Also die Wahrheit der Aussage $p|m'\Leftarrow\exists 1\leq{k}\leq{n+1}:p|a_k$. Es gibt auch hier zwei F\"alle zu unterscheiden.
+		\begin{enumerate}
+ 			\item[Fall 1:] Es gilt $\exists 1\leq{k}\leq{n}:p|a_k$. Wir k\"onnen auch hier o.B.d.A. sagen, dass gilt $k=1$. Schreiben wir nun $m'$ ausf\"uhrlich auf, so steht dort
+			\[m'=a_1*a_2*\dots{}*a_{n-1}*a_n*a_{n+1}\]
+			Nun k\"onnen wir $a_1$ auch schreiben als $a_1=p*b_1$. Nun setzen wir dies in unsere Darstellung von $m'$ ein und erhalten
+			\[m'=p*(b_1*a_2*a_3*\dots{}*a_n*a_{n+1})\]
+			Auch hier ist die Aussage $p|m'$ offensichtlich.
+			\item[Fall 2:] Gelte nun $p\nmid{a_i}\forall 1\leq{i}\leq{n},\quad\exists k=n+1:p|a_k$ oder zu gut deutsch $p|a_{n+1}$. Somit k\"onnen wir als erstes $a_{n+1}$ schreiben als $a_{n+1}=p*b_{n+1}$. Nutzen wir dies und die Gestalt von $m$, so m\"ussen wir nur noch zeigen
+			\[p|m'=p*m*b_{n+1}\]
+			Die Wahrheit dieser Aussage ist ebenfalls offensichtlich.
+		\end{enumerate}
+		Somit haben wir f\"ur alle $n\in\N$ mit $n\geq 1$ gezeigt:
+		\[p|m\Leftrightarrow\exists 1\leq{k}\leq{n}:p|a_k\]
+		\begin{flushright}
+    			q.e.d.
+		\end{flushright}
+	\end{Beweis}
+\end{document}
