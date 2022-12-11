@@ -1,0 +1,44 @@
+\documentclass{article}
+\usepackage[british]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsxtra}
+\usepackage{amsthm}
+\usepackage[latin1]{inputenc}
+
+\theoremstyle{plain}
+	\newtheorem{lemma}[equation]{Lemma}
+\theoremstyle{remark}
+	\newtheorem{notation}[equation]{Notation}
+
+\begin{document}
+    \begin{lemma}
+        The sets $\mathfrak{S}_c(V)$, $\mathfrak{S}_d(V)$, and 
+			$\mathfrak{S}(V)$ are directed with respect to both partial orders 
+			$\subseteq$ and $\leq$. The subset $\mathfrak{S}_d(V)$ is always 
+			cofinal in $\mathfrak{S}(V)$; the subset $\mathfrak{S}_c(V)$ is cofinal 
+			in $\mathfrak{S}(V)$ if and only if $V$ is complete.
+    \end{lemma}
+    \begin{proof}
+        The families of subsets $\mathfrak{S}_C(V)$, $\mathfrak{S}_d(V)$, and 
+			$\mathfrak{S}(V)$ are closed under the operation
+        \[(B_1,B_2)\mapsto B_1+B_2 := \lbrace{x_1+x_2\vert x_1 \in B_1, x_2 \in B_2\rbrace}\]
+        This holds for $\mathfrak{S}(V)$ because $B_1+B_2$ is contained in the 
+			convex hull of $2B_1\cup 2B_2$. It is clear that $B_1+B_2$ is again a 
+			disk if $B_1$ and $B_2$ are. It also inherits completeness because 
+			$V_{B_1+B_2}$ is a quotient of the {\scshape Banach} space 
+			$V_{B_1}\oplus V_{B_2}$, and quotients of {\scshape Banach} spaces are 
+			again complete. The cofinality assertions are trivial.\qedhere
+    \end{proof}
+
+	\begin{notation}
+		We sometimes write $A\subseteq^\diamondsuit B$ or $x\in^\diamondsuit B$
+		instead of $A\subseteq B^\diamondsuit$ or $x\in B^\diamondsuit$ and
+		$A\subseteq^\heartsuit B$ or $x\in^\heartsuit B$ instead of 
+		$A\subseteq B^\heartsuit$ or $x\in B^\heartsuit$. These relations are 
+		transitive, thatg is, $x\in^\diamondsuit S$ and 
+		$S\subseteq^\diamondsuit T$ implies $x\in^\diamondsuit T$, and so on.
+	\end{notation}
+
+\end{document}

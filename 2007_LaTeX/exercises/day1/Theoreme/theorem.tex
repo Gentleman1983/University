@@ -1,0 +1,72 @@
+\documentclass[a4paper,10pt]{article}
+
+\usepackage[latin1]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{enumitem}
+
+\theoremstyle{definition}
+    \newtheorem{defi}[equation]{Definition}
+\theoremstyle{remark}
+    \newtheorem{bsp}[equation]{Beispiel}
+    \newtheorem*{bew}{Beweis}
+\theoremstyle{plain}
+    \newtheorem{hpts}[equation]{Hauptsatz}
+    \newtheorem*{sbw}{Satz von Bolzano-Weierstra\ss}
+
+\setlist{noitemsep, label=(\arabic*)}
+
+\begin{document}
+
+    \begin{defi}
+        Ein geod\"atischer metrischer Raum hei{\ss}t \textit{CAT(0)-Raum}, wenn jedes Dreieck
+        in ihm d\"unner ist als ein Dreieck mit denselben Seitenl\"angen im Euklidischen Raum.
+    \end{defi}
+
+    \begin{bsp}
+        Die folgenden R\"aume sind
+        CAT(0)-R\"aume:\begin{enumerate}
+                \item B\"aume, versehen mit der nat\"urlichen
+                Wegmetrik;
+                \item einfach zusammenh\"angende, vollst\"andige Riemannsche Mannigfaltigkeiten
+                nicht-positiver Kr\"ummung;
+                \item affine Geb\"aude.
+
+        \end{enumerate}
+        Insbesondere ist der gew\"ohnliche Euklidische Raum CAT(0).
+    \end{bsp}
+
+    \begin{hpts}
+        Eine kompakte Gruppe wirke stetig und isometrisch auf einem lokal kompakten CAT(0)-Raum.
+        Dann gibt es einen gemeinsamen Fixpunkt.
+    \end{hpts}
+
+    \begin{proof}
+        Der Beweis zerf\"allt in mehrere Schritte.
+        \begin{enumerate}
+            \item W\"ahle einen beliebigen Punkt im CAT(0)-Raum und betrachte seinen Orbit. Dies
+            ist eine kompakte Teilmenge. Betrachte die Menge aller Kugeln, die diesen Orbit
+            enthalten.
+            \item Wir behaupten, dass es \textit{genau eine} solche Kugel gibt, deren Radius minimal
+            ist.
+            \item Um \textit{Existenz} von Kugeln mit minimalem Radius zu beweisen, w\"ahle eine Folge
+            von Kugeln, deren Radien gegen die untere Schranke f\"ur die Radien konvergieren. Ihre
+            Mittelpunktenliegen alle in einer kompakten Teilmenge, weil unser Raum lokal kompakt und
+            vollst\"andig ist. Nach Auswahl einer Teilfolge konvergieren die Mittelpunkte gegen einen
+            Punkt in unserem Raum. Er ist der Mittelpunkt eines Kreises von minimalem Radius.
+            \item Um \textit{Eindeutigkeit} von Kugeln mit minimalem Radius zu beweisen, nehme an, es
+            g\"abe mehr als eine solche Kugel. Dann ist unsere kompakte Teilmenge im Durchschnitt zweier
+            Kugeln von gleichem Radius enthalten. Ein geometrisches Argument zeigt, dass dieser
+            Durchschnitt schon in einer kleineren Kugel enthalten ist, was Minimalit\"at widerspricht.
+            \item Der Mittelpunkt der Kugel mit kleinstem Radius, die den Orbit enth\"alt, ist unter der
+            Gruppenwirkung invariant, weil sie ihn wieder auf Mittelpunkte von minimalen Kugeln abbildet.
+            \qedhere
+        \end{enumerate}
+    \end{proof}
+
+    \begin{sbw}
+        Jede beschr\"ankte unendliche Menge reeller Zahlen besitzt einen H\"aufungspunkt.
+    \end{sbw}
+
+\end{document}

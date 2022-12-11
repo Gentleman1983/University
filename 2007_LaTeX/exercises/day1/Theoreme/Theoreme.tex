@@ -1,0 +1,61 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{amsthm}
+\theoremstyle{plain}
+\newtheorem{theorem}[equation]{Hauptsatz}
+\newtheorem*{theo}{Satz}
+\theoremstyle{definition}
+\newtheorem{definition}[equation]{Definition}
+\theoremstyle{remark}
+\newtheorem{example}[equation]{Beispiel}
+\begin{document}
+\begin{definition}
+Ein geod"atischer metrischer Raum hei"st ein \emph{CAT(0)-Raum}, wenn
+jedes Dreieck in ihm d"unner ist als ein Dreieck mit denselben Seitenl"angen im
+Euklidischen Raum.
+\end{definition}
+
+\begin{example}
+Die folgenden R"aume sind CAT(0)-R"aume:\\
+(1) B"aume, versehen mit der nat"urlichen Wegmetrik;\\
+(2) einfach zusammenh"angende, vollst"andige Riemannsche Mannigfaltigkeiten
+nicht-positiver Kr"ummung;\\
+(3) affine Geb"aude.\\
+Insbesondere ist der gew"ohnliche Euklidische Raum CAT(0).
+\end{example}
+
+\begin{theorem}
+Eine kompakte Gruppe wirke stetig und isometrisch auf einem lokal
+kompakten CAT(0)-Raum. Dann gibt es einen gemeinsamen Fixpunkt.
+\end{theorem}
+
+\begin{proof}
+Der Beweis zerf"allt in mehrere Schritte.\\
+(1) W"ahle einen beliebigen Punkt im CAT(0)-Raum und betrachte seinen Orbit.
+Dies ist eine kompakte Teilmenge. Betrachte die Menge aller Kugeln,
+die diesen Orbit enthalten.\\
+(2) Wir behaupten, dass es \emph{genau eine} solche Kugel gibt, deren Radius minimal
+ist.\\
+(3) Um \emph{Existenz} von Kugeln mit minimalem Radius zu beweisen, w"ahle eine
+Folge von Kugeln, deren Radien gegen die untere Schranke f"ur die Radien
+konvergieren. Ihre Mittelpunkte liegen alle in einer kompakten Teilmenge,
+weil unser Raum lokal kompakt und vollst"andig ist. Nach Auswahl einer
+Teilfolge konvergieren die Mittelpunkte gegen einen Punkt in unserem
+Raum. Er ist der Mittelpunkt eines Kreises von minimalem Radius.\\
+(4) Um \emph{Eindeutigkeit} von Kugeln mit minimalem Radius zu beweisen, nehme
+an, es g"abe mehr als eine solche Kugel. Dann ist unsere kompakte Teilmenge
+im Durchschnitt zweier Kugeln von gleichem Radius enthalten. Ein geometrisches
+Argument zeigt, dass dieser Durchschnitt schon in einer kleineren
+Kugel enthalten ist, was der Minimalit"at widerspricht.\\
+(5) Der Mittelpunkt der Kugel mit kleinstem Radius, die den Orbit enth"alt, ist
+unter der Gruppenwirkung invariant, weil sie ihn wieder auf Mittelpunkte
+von minimalen Kugeln abbildet. 
+\end{proof}
+
+\begin{theo}[Bolzano-Weierstra"s]
+Jede beschr"ankte unendliche Menge reeller Zahlen besitzt einen H"aufungspunkt.
+\end{theo}
+\end{document}
+
+
