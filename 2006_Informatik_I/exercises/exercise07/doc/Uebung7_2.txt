@@ -1,0 +1,122 @@
+Aufgabenteil 1)
+Beim Einlesen der Variablen wird ein Datenfeld (Array) mit den Buchstaben 
+des zu prüfenden Ausdrucks gefüllt. Dieses Datenfeld hat n Speicherplätze
+(e1 bis en). Bei der Füllung des Datenfeldes wurden Leer- und Satzzeichen
+bereits ignoriert.
+Nun prüft man, ob jedes ei identisch mit dem e(n-i) ist. Sollte ein ei 
+nicht mit dem zugehörigen e(n-1) übereinstimmen, wird die Prüfung abgebro-
+chen und die Fehlermeldung "Ausdruck e ist kein Palindrom!" ausgegeben.
+Läuft die Überprüfung ohne Fehler ab, so wird die Bestätigung "Ausdruck e
+ist ein Palindrom!" ausgegeben.
+
+
+
+Aufgabenteil 2)
+Lege Zeichen-Array e an;
+Lege Zeichenkette Eingabe an;
+Lege Ganzzahl Pos an und weise ihr den Wert 0 zu;
+Lege Wahrheitswert Palindrom an und weise ihm den Wert wahr zu;
+
+Lese zu prüfenden Ausdruck in Eingabe ein;
+
+Solange (i=0; i <= Länge von Eingabe)
+{
+  Falls(Buchstabe von Eingabe an der Stelle i ein Buchstabe ist)
+  {
+    Speichere den Buchstaben als Großbuchstaben in Array e an der Stelle
+         Pos (e[Pos] im weiteren Verlauf des Pseudocodes);
+    Erhöhe Pos um 1;
+  }
+  Erhöhe i um 1;
+}
+
+Rufe Subroutine PruefeAusdruck mit den Übergabeparameter Pos, Pos, 
+    Palindrom auf und speichere den Rückgabewert (Wahrheitswert) 
+    in Palindrom;
+Falls(Palindrom gleich wahr)
+{
+  Gebe aus "Der Ausdruck ist ein Palindrom!";
+}
+Ansonsten
+{
+  Gebe aus "Der Ausdruck ist KEIN Palindrom!";
+}
+
+
+Unterprogramm PruefeAusdruck
+============================
+
+Übergabeparameter: Ganzzahl Position, Ganzzahl MaxPos, Wahrheits-
+     wert Wahr
+
+Falls(e[Position] ungleich e[MaxPos-Position])
+{
+  Setze Wahr auf unwahr;
+}
+Falls(Wahr gleich unwahr)
+{
+  Übergebe Wahr (mit Wert unwahr) als Rückgabewert;
+}
+Falls(Position = 0)
+{
+  Übergebe Wahr (mit Wert wahr) als Rückgabewert;
+}
+Ansonsten
+{
+  Verringere Position um 1;
+  Rufe Subroutine PruefeAusdruck mit den Übergabeparametern 
+       Position, MaxPos, Wahr auf und weise den Rückgabewert
+       Wahr zu;
+  Übergebe Wahr (mit Wert wahr) als Rückgabewert;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Aufgabenteil 3)
+Lege Zeichen-Array e an;
+Lege Zeichenkette Eingabe an;
+Lege Ganzzahl Pos an und weise ihr den Wert 0 zu;
+Lege Wahrheitswert Palindrom an und weise ihm den Wert wahr zu;
+
+Lese zu prüfenden Ausdruck in Eingabe ein;
+
+Solange (i=0; i <= Länge von Eingabe)
+{
+  Falls(Buchstabe von Eingabe an der Stelle i ein Buchstabe ist)
+  {
+    Speichere den Buchstaben als Großbuchstaben in Array e an der Stelle
+         Pos (e[Pos] im weiteren Verlauf des Pseudocodes);
+    Erhöhe Pos um 1;
+  }
+  Erhöhe i um 1;
+}
+
+Solange(j=0; j<=Pos)
+{
+  Falls(e[j] ungleich e[Pos-j])
+  {
+    Setze Palindrom auf den Wert unwahr;
+    Gebe aus "Der Ausdruck ist KEIN Palindrom!";
+    Breche die komplette Abarbeitung ab;
+  }
+  Ansonsten Falls(j gleich Pos)
+  {
+    Gebe aus "Ganzen Ausdruck geprüft.";
+    Gebe aus "Ausdruck ist ein Palindrom!";
+  }
+  Erhöhe j um 1;
+}
